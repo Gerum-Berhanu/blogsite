@@ -25,18 +25,18 @@
                         <img class="brand" src="assets/img/bootstraper-logo.png" alt="bootstraper logo">
                     </div>
                     <h6 class="mb-4 text-muted">Create new account</h6>
-                    <form action="" method="">
+                    <form id="signup-form" action="" method="">
                         <div class="mb-3 text-start">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" placeholder="Enter Name" required>
+                            <input type="text" name="full-name-field" class="form-control" placeholder="Enter Name" required>
                         </div>
                         <div class="mb-3 text-start">
-                            <label for="email" class="form-label">Email adress</label>
-                            <input type="email" class="form-control" placeholder="Enter Email" required>
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" name="email-field" class="form-control" placeholder="Enter Email" required>
                         </div>
                         <div class="mb-3 text-start">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" placeholder="Password" required>
+                            <input type="password" name="password-field" class="form-control" placeholder="Password" required>
                         </div>
                         <!-- 
                         <div class="mb-3">
@@ -45,7 +45,7 @@
                         -->
                         <div class="mb-3 text-start">
                             <div class="form-check">
-                              <input class="form-check-input" name="confirm" type="checkbox" value="" id="check1">
+                              <input class="form-check-input" name="confirm-field" type="checkbox" value="" id="check1" required>
                               <label class="form-check-label" for="check1">
                                 I agree to the <a href="#" tabindex="-1">terms and policy</a>.
                               </label>
@@ -61,5 +61,6 @@
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script src="./signup-script.js"></script>
 
 </html>
