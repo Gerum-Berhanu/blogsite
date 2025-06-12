@@ -33,6 +33,14 @@ class Database {
     }
 }
 
+class Validator {
+    public function allNotNull(array $arr): bool {
+        return array_reduce($arr, function ($carry, $v) {
+            return $carry && !is_null($v);
+        }, true);
+    }
+}
+
 class Response {
     public array $response;
     public function __construct(string|array $data = "", string $status = HttpStatusCodes::HTTP_200_OK) {

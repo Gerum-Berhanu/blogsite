@@ -7,12 +7,12 @@ form.addEventListener("submit", async (e)=>{
     full-name-field
     email-field
     password-field
-    confirm-field
+    check-field
     */
-   const resp = await fetch("./signup-process.php", {
+   const rawResp = await fetch("./signup-process.php", {
         method: "POST",
         body: formData
    });
-   const jdata = resp.json();
-   console.log(jdata);
+   const resp = await rawResp.json();
+   console.log(resp);
 });

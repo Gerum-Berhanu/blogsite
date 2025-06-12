@@ -2,10 +2,26 @@
 
 require_once "../scripts/classes.php";
 
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    new Response(status: HttpStatusCodes::HTTP_405_METHOD_NOT_ALLOWED);
+    exit;
+}
+
 $db = new Database();
 
-if (!$db->__db_conn_ok) {
-    
+$full_name = $_POST["full-name-field"];
+$email = $_POST["email-field"];
+$password = $_POST["password-field"];
+$check = $_POST["check-field"];
+
+if ( !(new Validator())->allNotNull([$full_name, $email, $password, $check]) || !$check) {
+    new Response("Please fill in all the required fields.", HttpStatusCodes::HTTP_400_BAD_REQUEST);
+    exit;
 }
+
+$hashed_password = password_hash($password, PASSWORD_ARGON2I);
+
+$db->execute_sql("INSERT INTO users (full_name, email, password) VALUES (?, ?, ?);", [$full_name, $email, $hashed_password]);
+new Response("Account created successfully.");
 
 ?>
