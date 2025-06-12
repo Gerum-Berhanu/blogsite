@@ -24,6 +24,6 @@ $hashed_password = password_hash($password, PASSWORD_ARGON2I);
 $user_id = $db->execute_sql("INSERT INTO users (full_name, email, password) VALUES (?, ?, ?);", [$full_name, $email, $hashed_password], true);
 $_SESSION["user_id"] = $user_id;
 
-new Response("Account created successfully.");
+new Response(1);
 
 ?>

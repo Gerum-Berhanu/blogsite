@@ -1,5 +1,4 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/auth.php";
 ?>
 
 <!doctype html>
@@ -30,7 +29,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/auth.php";
                     <h6 class="mb-4 text-muted">Login to your account</h6>
                     <form action="" method="" id="login-form">
                         <div class="mb-3 text-start">
-                            <label for="email" class="form-label">Email adress</label>
+                            <label for="email" class="form-label">Email address</label>
                             <input type="email" name="email-field" class="form-control" placeholder="Enter Email" required>
                         </div>
                         <div class="mb-3 text-start">

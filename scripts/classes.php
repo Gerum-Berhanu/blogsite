@@ -1,6 +1,6 @@
 <?php
-if (!empty($_SERVER["REQUEST_METHOD"])) {
-    header("Location: /control-panel/dashboard/}");
+if ($_SERVER["HTTP_HOST"] === "localhost" && $_SERVER["REQUEST_URI"] === "/scripts/classes.php") {
+    header("Location: /control-panel/dashboard/");
     exit;
 }
 
@@ -51,7 +51,7 @@ class Validator {
 
 class Response {
     public array $response;
-    public function __construct(string|array $data = "", string $status = HttpStatusCodes::HTTP_200_OK) {
+    public function __construct(string|int|float|array $data = "", string $status = HttpStatusCodes::HTTP_200_OK) {
         if (!empty($data)) {
             $this->response["data"] = $data;
         }

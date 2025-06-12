@@ -8,6 +8,10 @@ form.addEventListener("submit", async (e) => {
         body: formData
     });
     const resp = await rawResp.json();
+
+    if (resp.data == '1') {
+        document.location.href = "../control-panel/dashboard/";
+    }
     console.log(resp);
     
 });

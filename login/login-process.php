@@ -24,7 +24,7 @@ if (empty($resp)) {
     exit;
 }
 
-$stored_id = $resp[0]["password"];
+$stored_id = $resp[0]["id"];
 $stored_password = $resp[0]["password"];
 $verified_password = password_verify($password, $stored_password);
 
