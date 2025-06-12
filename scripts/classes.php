@@ -1,5 +1,7 @@
 <?php
 
+require_once "./http-status-codes.php";
+
 class Database {
     private $conn;
     public $__db_conn_ok = false;
@@ -18,6 +20,8 @@ class Database {
         } catch(PDOException $e) {
             $this->__db_conn_message = "Connection failed: " . $e->getMessage();
             $this->__db_conn_ok = false;
+            new Response($this->__db_conn_message, HttpStatusCodes::HTTP_500_INTERNAL_SERVER_ERROR);
+            exit;
         }
     }
 
@@ -25,10 +29,27 @@ class Database {
         $stmt = $this->conn->prepare($query);
         $stmt->execute($parameters);
         if ($fetch_json) {
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $rows;
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         return true;
+    }
+}
+
+class Response {
+    public array $response;
+    public function __construct(string|array $data = "", string $status = HttpStatusCodes::HTTP_200_OK) {
+        if (!empty($data)) {
+            $this->response["data"] = $data;
+        }
+        $this->response["status"] = $status;
+
+        http_response_code((int) $status);
+        header("Content-Type: application/json");
+        $this->send();
+    }
+
+    public function send() {
+        echo json_encode($this->response);
     }
 }
 
