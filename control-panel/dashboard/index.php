@@ -1,5 +1,14 @@
 <?php
 require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/auth.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/scripts/classes.php";
+
+$user_id = $_SESSION["user_id"];
+$db = new Database();
+
+$full_name = $db->execute_sql("SELECT full_name FROM users WHERE id = ?", [$user_id], true)[0]["full_name"];
+$number_of_user = $db->execute_sql("SELECT COUNT(*) AS users_count FROM users", [], true)[0]["users_count"];
+$number_of_blog = $db->execute_sql("SELECT COUNT(*) AS blogs_count FROM blogs", [], true)[0]["blogs_count"];
+$number_of_comment = $db->execute_sql("SELECT COUNT(*) AS comment_count FROM blog_comments", [], true)[0]["comment_count"];
 ?>
 
 <!doctype html>
@@ -43,7 +52,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/auth.php";
                         <li class="nav-item dropdown">
                             <div class="nav-dropdown">
                                 <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-user"></i> <span>Mr X</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                    <i class="fas fa-user"></i> <span><?= $full_name ?></span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end nav-link-menu">
                                     <ul class="nav-list">
@@ -53,7 +62,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/auth.php";
                                         <div class="dropdown-divider"></div>
                                         <li><a href="signup.html" class="dropdown-item"><i class="fas fa-user-plus"></i> signup</a></li>
                                         <li><a href="login.html" class="dropdown-item"><i class="fas fa-user-lock"></i> signin</a></li>
-                                        <li><a href="login.html" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                        <li><a href="../../logout/" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -83,7 +92,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/auth.php";
                                         <div class="col-sm-8">
                                             <div class="detail">
                                                 <p class="detail-subtitle">Number of user</p>
-                                                <span class="number">6,267</span>
+                                                <span class="number"><?= $number_of_user ?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -108,7 +117,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/auth.php";
                                         <div class="col-sm-8">
                                             <div class="detail">
                                                 <p class="detail-subtitle">Number of Blog</p>
-                                                <span class="number">180,0</span>
+                                                <span class="number"><?= $number_of_blog ?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -158,7 +167,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/auth.php";
                                         <div class="col-sm-8">
                                             <div class="detail">
                                                 <p class="detail-subtitle">Number of comment</p>
-                                                <span class="number">75</span>
+                                                <span class="number"><?= $number_of_comment ?></span>
                                             </div>
                                         </div>
                                     </div>
