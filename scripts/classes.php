@@ -23,10 +23,14 @@ class Database {
         }
     }
 
-    public function execute_sql(string $query, array $parameters = [], bool $fetch_json = false) {
+    public function execute_sql(string $query, array $parameters = [], bool $fetch_data = false) {
         $stmt = $this->conn->prepare($query);
         $stmt->execute($parameters);
-        if ($fetch_json) {
+        if ($fetch_data) {
+            // If it's an INSERT, return the inserted ID
+            if (stripos(trim($query), 'insert') === 0) {
+                return $this->conn->lastInsertId();
+            }
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         return true;
