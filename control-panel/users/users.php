@@ -12,86 +12,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Users | Bootstrap Simple Admin Template</title>
-    <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
-    <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
-    <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/datatables/datatables.min.css" rel="stylesheet">
-    <link href="assets/css/master.css" rel="stylesheet">
+    <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/asset-header.php"; ?>
 </head>
 
 <body>
     <div class="wrapper">
-        <!-- sidebar navigation component -->
-                <nav id="sidebar" class="active">
-            <div class="sidebar-header">
-                <img src="assets/img/bootstraper-logo.png" alt="bootraper logo" class="app-logo">
-            </div>
-            <ul class="list-unstyled components text-secondary">
-                <li>
-                    <a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="index.html"><i class="fas fa-book"></i> Index</a>
-                </li>
-                <li>
-                    <a href="newblog.html"><i class="fas fa-plus"></i> New Blog</a>
-                </li>
-                <li>
-                  <a href="admin_list_blog.html" ><i class="fas fa-list"></i> List Blog</a></li>
-
-                <li>
-                    <a href="users.html"><i class="fas fa-table"></i> Users</a>
-                </li>
-                
-                <li>
-                    <a href="login.html"><i class="fas fa-lock"></i> Login</a>
-                </li>
-                <li>
-                    <a href="signup.html"><i class="fas fa-user-plus"></i> Signup</a>
-                </li>
-
-                <li class="d-none">
-                    <a href="forgot-password.html"><i class="fas fa-user-lock"></i> Forgot password</a>
-                </li>
-               
-                <li>
-                    <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
-                </li>
-            </ul>
-        </nav>
+        <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/sidebar.php"; ?>
         <div id="body" class="active">
             <!-- navbar navigation component -->
-             
+
             <nav class="navbar navbar-expand-lg navbar-white bg-white">
                 <button type="button" id="sidebarCollapse" class="btn btn-light">
                     <i class="fas fa-bars"></i><span></span>
-                    
-                </button>
-               
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                 
-                  <ul class="nav navbar-nav ms-auto">
-                     
 
-                   
-                       
-                       
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="nav navbar-nav ms-auto">
+
+
+
+
+
 
                         <li class="nav-item dropdown">
                             <div class="nav-dropdown">
-                                <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-user"></i> <span>Mr X</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user"></i> <span>Mr X</span> <i style="font-size: .8em;"
+                                        class="fas fa-caret-down"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end nav-link-menu">
                                     <ul class="nav-list">
-                                        <li><a href="settings.html" class="dropdown-item"><i class="fas fa-address-card"></i> Profile</a></li>
-                                       
-                                        <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+                                        <li><a href="settings.html" class="dropdown-item"><i
+                                                    class="fas fa-address-card"></i> Profile</a></li>
+
+                                        <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i>
+                                                Settings</a></li>
                                         <div class="dropdown-divider"></div>
-                                        <li><a href="signup.html" class="dropdown-item"><i class="fas fa-user-plus"></i> signup</a></li>
-                                        <li><a href="login.html" class="dropdown-item"><i class="fas fa-user-lock"></i> signin</a></li>
-                                        <li><a href="login.html" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                        <li><a href="signup.html" class="dropdown-item"><i class="fas fa-user-plus"></i>
+                                                signup</a></li>
+                                        <li><a href="login.html" class="dropdown-item"><i class="fas fa-user-lock"></i>
+                                                signin</a></li>
+                                        <li><a href="login.html" class="dropdown-item"><i
+                                                    class="fas fa-sign-out-alt"></i> Logout</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -104,7 +69,7 @@
                 <div class="container">
                     <div class="page-title">
                         <h3>Users
-                             
+
                         </h3>
                     </div>
                     <div class="box box-primary">
@@ -128,8 +93,10 @@
                                         <td>Admin</td>
                                         <td>Active</td>
                                         <td class="text-end">
-                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
-                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i
+                                                    class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i
+                                                    class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -139,8 +106,10 @@
                                         <td>Staff</td>
                                         <td>Active</td>
                                         <td class="text-end">
-                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
-                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i
+                                                    class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i
+                                                    class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -150,8 +119,10 @@
                                         <td>Staff</td>
                                         <td>Active</td>
                                         <td class="text-end">
-                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
-                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i
+                                                    class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i
+                                                    class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -161,8 +132,10 @@
                                         <td>Admin</td>
                                         <td>Disabled</td>
                                         <td class="text-end">
-                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
-                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i
+                                                    class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i
+                                                    class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -172,8 +145,10 @@
                                         <td>Admin</td>
                                         <td>Active</td>
                                         <td class="text-end">
-                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
-                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i
+                                                    class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i
+                                                    class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -183,8 +158,10 @@
                                         <td>Staff</td>
                                         <td>Active</td>
                                         <td class="text-end">
-                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
-                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i
+                                                    class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i
+                                                    class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -194,8 +171,10 @@
                                         <td>Staff</td>
                                         <td>Active</td>
                                         <td class="text-end">
-                                            <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
-                                            <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                            <a href="" class="btn btn-outline-info btn-rounded"><i
+                                                    class="fas fa-pen"></i></a>
+                                            <a href="" class="btn btn-outline-danger btn-rounded"><i
+                                                    class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -206,11 +185,11 @@
             </div>
         </div>
     </div>
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/datatables/datatables.min.js"></script>
-    <script src="assets/js/initiate-datatables.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/vendor/datatables/datatables.min.js"></script>
+    <script src="../../assets/js/initiate-datatables.js"></script>
+    <script src="../../assets/js/script.js"></script>
 </body>
 
 </html>

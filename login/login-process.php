@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "../scripts/classes.php";
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {

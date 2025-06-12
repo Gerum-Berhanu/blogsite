@@ -1,3 +1,7 @@
+<?php
+require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/auth.php";
+?>
+
 <!doctype html>
 <!-- 
 * Bootstrap Simple Admin Template
@@ -12,70 +16,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Settings | Bootstrap Simple Admin Template</title>
-    <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
-    <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
-    <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/master.css" rel="stylesheet">
+    <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/asset-header.php"; ?>
 </head>
 
 <body>
     <div class="wrapper">
         <!-- sidebar navigation component -->
-                <nav id="sidebar" class="active">
-            <div class="sidebar-header">
-                <img src="assets/img/bootstraper-logo.png" alt="bootraper logo" class="app-logo">
-            </div>
-            <ul class="list-unstyled components text-secondary">
-                <li>
-                    <a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="index.html"><i class="fas fa-book"></i> Index</a>
-                </li>
-                <li>
-                    <a href="newblog.html"><i class="fas fa-plus"></i> New Blog</a>
-                </li>
-                <li>
-                  <a href="admin_list_blog.html" ><i class="fas fa-list"></i> List Blog</a></li>
-
-                <li>
-                    <a href="users.html"><i class="fas fa-table"></i> Users</a>
-                </li>
-                
-                <li>
-                    <a href="login.html"><i class="fas fa-lock"></i> Login</a>
-                </li>
-                <li>
-                    <a href="signup.html"><i class="fas fa-user-plus"></i> Signup</a>
-                </li>
-
-                <li class="d-none">
-                    <a href="forgot-password.html"><i class="fas fa-user-lock"></i> Forgot password</a>
-                </li>
-               
-                <li>
-                    <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
-                </li>
-            </ul>
-        </nav>
+        <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/sidebar.php"; ?>
         <div id="body" class="active">
             <!-- navbar navigation component -->
-             
+
             <nav class="navbar navbar-expand-lg navbar-white bg-white">
                 <button type="button" id="sidebarCollapse" class="btn btn-light">
                     <i class="fas fa-bars"></i><span></span>
-                    
-                </button>
-               
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                 
-                  <ul class="nav navbar-nav ms-auto">
-                     
 
-                   
-                       
-                       
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="nav navbar-nav ms-auto">
+
+
+
+
+
 
                         <li class="nav-item dropdown">
                             <div class="nav-dropdown">
@@ -85,7 +49,7 @@
                                 <div class="dropdown-menu dropdown-menu-end nav-link-menu">
                                     <ul class="nav-list">
                                         <li><a href="settings.html" class="dropdown-item"><i class="fas fa-address-card"></i> Profile</a></li>
-                                       
+
                                         <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
                                         <div class="dropdown-divider"></div>
                                         <li><a href="signup.html" class="dropdown-item"><i class="fas fa-user-plus"></i> signup</a></li>
@@ -113,7 +77,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" id="password-tab" data-bs-toggle="tab" href="#password_reset" role="tab" aria-controls="system" aria-selected="false">Change Password</a>
                                 </li>
-                               
+
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade active show" id="general" role="tabpanel" aria-labelledby="general-tab">
@@ -123,14 +87,14 @@
                                             <label for="site-title" class="form-label">User name</label>
                                             <input type="text" name="site_title" class="form-control">
                                         </div>
-                                         
+
                                         <div class="mb-3">
                                             <label class="form-label">Logo</label>
-                                              <input class="form-control" name="site_logo" type="file" id="formFile1">
+                                            <input class="form-control" name="site_logo" type="file" id="formFile1">
                                             <small class="text-muted">The image must have a maximum size of 1MB</small>
                                         </div>
-                                        
-                                        
+
+
                                         <div class="mb-3 text-end">
                                             <button class="btn btn-success" type="submit"><i class="fas fa-check"></i> Save</button>
                                         </div>
@@ -152,16 +116,16 @@
                                             <label for="site-title" class="form-label">Confirm Password</label>
                                             <input type="text" name="site_title" class="form-control">
                                         </div>
-                                         
-                                        
-                                        
-                                        
+
+
+
+
                                         <div class="mb-3 text-end">
                                             <button class="btn btn-success" type="submit"><i class="fas fa-check"></i> Save</button>
                                         </div>
                                     </div>
                                 </div>
-                               
+
                             </div>
                         </div>
                     </div>
@@ -169,9 +133,9 @@
             </div>
         </div>
     </div>
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/script.js"></script>
 </body>
 
 </html>

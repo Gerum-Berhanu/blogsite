@@ -1,4 +1,8 @@
 <?php
+if (!empty($_SERVER["REQUEST_METHOD"])) {
+    header("Location: /control-panel/dashboard/}");
+    exit;
+}
 
 class Database {
     private $conn;

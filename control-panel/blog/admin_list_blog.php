@@ -1,0 +1,198 @@
+<!doctype html>
+<!-- 
+* Bootstrap Simple Admin Template
+* Version: 2.1
+* Author: Alexis Luna
+* Website: https://github.com/alexis-luna/bootstrap-simple-admin-template
+-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Dashboard | Bootstrap Simple Admin Template</title>
+  <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/asset-header.php"; ?>
+</head>
+
+<body>
+  <div class="wrapper">
+    <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/sidebar.php"; ?>
+    <div id="body" class="active">
+      <!-- navbar navigation component -->
+
+      <nav class="navbar navbar-expand-lg navbar-white bg-white">
+        <button type="button" id="sidebarCollapse" class="btn btn-light">
+          <i class="fas fa-bars"></i><span></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul class="nav navbar-nav ms-auto">
+
+
+
+
+
+
+            <li class="nav-item dropdown">
+              <div class="nav-dropdown">
+                <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="fas fa-user"></i> <span>Mr X</span> <i style="font-size: .8em;"
+                    class="fas fa-caret-down"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end nav-link-menu">
+                  <ul class="nav-list">
+                    <li><a href="settings.html" class="dropdown-item"><i class="fas fa-address-card"></i> Profile</a>
+                    </li>
+
+                    <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+                    <div class="dropdown-divider"></div>
+                    <li><a href="signup.html" class="dropdown-item"><i class="fas fa-user-plus"></i> signup</a></li>
+                    <li><a href="login.html" class="dropdown-item"><i class="fas fa-user-lock"></i> signin</a></li>
+                    <li><a href="login.html" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- end of navbar navigation -->
+      <div class="content">
+        <div class="container">
+
+          <div class="row">
+
+            <div class="row">
+              <div class="leftcolumn">
+                <div class="card">
+                  <h2>TITLE HEADING</h2>
+                  <h5>Title description, Dec 7, 2017</h5>
+                  <object class="fakeimg" data="Blowfish.png"></object>
+                  <!-- <div >Image</div> -->
+                  <br>
+                  <p>Some text..</p>
+                  <a href="admin_blog_detail.html" class="text-primmary "
+                    style="width: max-content; color:blue ;text-align: left;">Detail</a>
+                </div>
+
+              </div>
+              <div class="rightcolumn">
+
+                <div class="card">
+                  <h3>Popular Post</h3>
+                  <div class="fakeimg">Image</div><br>
+                  <div class="fakeimg">Image</div><br>
+                  <div class="fakeimg">Image</div>
+                </div>
+
+              </div>
+            </div>
+
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/vendor/chartsjs/Chart.min.js"></script>
+  <script src="../../assets/js/dashboard-charts.js"></script>
+  <script src="../../assets/js/script.js"></script>
+</body>
+
+</html>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Add a gray background color with some padding */
+  body {
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
+  }
+
+  /* Header/Blog Title */
+  .header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+  }
+
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {
+    float: left;
+    width: 75%;
+  }
+
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+
+  /* Fake image */
+  .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Add a card effect for articles */
+  .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+  }
+
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+
+    .leftcolumn,
+    .rightcolumn {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  .fakeimg,
+  video,
+  audio,
+  iframe,
+  embed,
+  object {
+    max-width: 100%;
+    height: 300px;
+    /* Maintains aspect ratio */
+    object-fit: contain;
+    /* Options: contain, cover, fill */
+  }
+</style>
