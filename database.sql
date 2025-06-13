@@ -12,12 +12,12 @@ CREATE TABLE blogs (
 	text_content VARCHAR(255),
 	file_location VARCHAR(255),
     author_id INT,
-	FOREIGN KEY (author_id) REFERENCES users(id)
+	FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE blog_comments (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     comment VARCHAR(255),
 	blog_id INT,
-    FOREIGN KEY (blog_id) REFERENCES blogs(id)
+    FOREIGN KEY (blog_id) REFERENCES blogs(id) ON DELETE CASCADE
 );
