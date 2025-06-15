@@ -1,3 +1,7 @@
+<?php
+require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/auth.php";
+?>
+
 <!doctype html>
 <!-- 
 * Bootstrap Simple Admin Template
@@ -76,20 +80,20 @@
                                 <div class="card-header">New Blog</div>
                                 <div class="card-body">
 
-                                    <form accept-charset="utf-8">
+                                    <form id="newblog-form" accept-charset="utf-8">
                                         <div class="mb-3">
-                                            <label for="email" class="form-label">Title</label>
-                                            <input type="email" name="title" placeholder="title" class="form-control"
+                                            <label for="text" class="form-label">Title</label>
+                                            <input type="text" name="title-field" placeholder="title" class="form-control"
                                                 required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="password" class="form-label">Subject</label>
-                                            <textarea type="text" name="subject" class="form-control"
+                                            <label for="text" class="form-label">Subject</label>
+                                            <textarea type="text" name="subject-field" class="form-control"
                                                 required></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">file</label>
-                                            <input class="form-control" name="site_logo" type="file" id="formFile1">
+                                            <input class="form-control" name="file-field" type="file" id="formFile1" required>
                                             <small class="text-muted">The image must have a maximum size of 40MB</small>
                                         </div>
                                         <div class="mb-3">
@@ -110,5 +114,5 @@
     <script src="../../assets/js/form-validator.js"></script>
     <script src="../../assets/js/script.js"></script>
 </body>
-
+<script src="./newblog-script.js"></script>
 </html>
