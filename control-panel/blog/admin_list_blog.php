@@ -1,3 +1,13 @@
+<?php
+require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/auth.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/scripts/classes.php";
+
+$db = new Database();
+$rows = $db->execute_sql("SELECT title, file_location, author_id FROM blogs", [], true);
+$uploadDir = $_SERVER["DOCUMENT_ROOT"] . "/files/uploads/blog-images/";
+
+?>
+
 <!doctype html>
 <!-- 
 * Bootstrap Simple Admin Template
@@ -30,16 +40,23 @@
 
             <div class="row">
               <div class="leftcolumn">
-                <div class="card">
-                  <h2>TITLE HEADING</h2>
-                  <h5>Title description, Dec 7, 2017</h5>
-                  <object class="fakeimg" data="Blowfish.png"></object>
+
+              <?php
+              foreach ($rows as $row) {
+                echo
+                '<div class="card">
+                  <h2>' . htmlspecialchars($row['title']) . '</h2>
+                  <!-- <h5>Title description, Dec 7, 2017</h5> -->
+                  <img class="fakeimg" src="/files/uploads/blog-images/'. $row['file_location'] .'"></img>
                   <!-- <div >Image</div> -->
                   <br>
-                  <p>Some text..</p>
+                  <!-- <p>Some text..</p> -->
                   <a href="admin_blog_detail.html" class="text-primmary "
                     style="width: max-content; color:blue ;text-align: left;">Detail</a>
                 </div>
+                ';
+              }
+              ?>
 
               </div>
               <div class="rightcolumn">
